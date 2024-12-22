@@ -30,7 +30,9 @@ def main():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
-        # pygame.draw.rect(screen, (255, 0, 0), pygame.Rect(100, 100, 300, 300))
+            x, y = pygame.mouse.get_pos()
+            print("Mouse position: ({}, {})".format(x, y))
+            print(pygame.MOUSEBUTTONDOWN)
         hello = font.render(f"Лучшие на свете", True, BLACK)
         hello1 = font.render(f'"КРЕСТИКИ-НОЛИКИ"!', True, BLACK)
         screen.blit(hello, (140, 30))
