@@ -27,12 +27,17 @@ def main():
     screen.blit(bg, (0, 0))
     while True:
         for event in pygame.event.get():
+            x, y = pygame.mouse.get_pos()
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
-            x, y = pygame.mouse.get_pos()
-            print("Mouse position: ({}, {})".format(x, y))
-            print(pygame.MOUSEBUTTONDOWN)
+            elif event.type == pygame.MOUSEBUTTONDOWN and (401 > x > 99) and (221 > y > 149):
+                print('Play')
+            elif event.type == pygame.MOUSEBUTTONDOWN and (401 > x > 99) and (341 > y > 269):
+                print('Custom')
+            elif event.type == pygame.MOUSEBUTTONDOWN and (401 > x > 99) and (461 > y > 389):
+                print('Statistika')
+            # print("Mouse position: ({}, {})".format(x, y))
         hello = font.render(f"Лучшие на свете", True, BLACK)
         hello1 = font.render(f'"КРЕСТИКИ-НОЛИКИ"!', True, BLACK)
         screen.blit(hello, (140, 30))
